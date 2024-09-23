@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS Reset / Normalize */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+html,
+body {
+  height: 100%; /* Ensure body takes full height */
+  font-family: sans-serif; /* Set a default font */
+  line-height: 1.5; /* Improve text readability */
+  color: #333; /* Default text color */
+  background-color: #FADFA1; /* Default background color */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+}
+
+ul,
+ol {
+  list-style: none; /* Remove default list styles */
+}
+
+img {
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+button {
+  background: none; /* Remove default button styles */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Additional styles can go here */
