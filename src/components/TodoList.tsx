@@ -42,7 +42,7 @@ export const TodoList = ({
   };
 
   return (
-    <div className="bg-[#F1ECE6] md:w-[465px] mt-4 rounded-2xl flex flex-col p-4 opacity-80 w-full">
+    <div className="bg-[#F1ECE6] max-w-[465px] mt-4 rounded-2xl flex flex-col p-4 opacity-80 w-full">
       <ul>
         {taskList.map((task: Task) => (
           <li key={task.id} className="mb-4 border-b border-orange-300 pb-3">

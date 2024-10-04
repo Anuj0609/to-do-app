@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
       <div className="flex justify-center min-h-screen">
-        <div className="flex flex-col items-center w-full">
+        <div className="flex flex-col items-center w-full px-2">
           <img src="/logo.png" alt="Logo" className="w-32 mt-16 mb-5" />
           <AddTodo taskList={taskList} setTaskList={setTaskList} />
           {taskList.length > 0 ? (
