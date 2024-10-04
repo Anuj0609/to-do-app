@@ -21,7 +21,6 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-center items-start">
       <div className="flex justify-center min-h-screen">
         <div className="flex flex-col items-center w-full">
           <img src="/logo.png" alt="Logo" className="w-32 mt-16 mb-5" />
@@ -31,6 +30,5 @@ export default function Home() {
           ) : null}
         </div>
       </div>
-    </div>
   );
 }

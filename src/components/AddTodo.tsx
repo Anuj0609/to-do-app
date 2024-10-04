@@ -1,4 +1,5 @@
 import { Task } from "@/app/page";
+import React from "react";
 
 export const AddTodo = ({
   taskList,
@@ -25,7 +26,11 @@ export const AddTodo = ({
   };
 
   return (
-    <form className="bg-#969696 text-lg flex w-[465px]" onSubmit={addTask}>
+    <form
+      className="bg-#969696 text-lg flex md:w-[465px]"
+      onSubmit={addTask}
+      w-full
+    >
       <input
         type="text"
         placeholder="What do you need to do?"
