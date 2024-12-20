@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTask } from "@/context/TaskContext";
-import categoryIcons from "@/utils/categoryIcons";
+// import categoryIcons from "@/utils/categoryIcons";
 
 function TaskInput() {
   const [inputTask, setInputTask] = useState<string>("");

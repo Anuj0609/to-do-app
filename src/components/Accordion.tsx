@@ -6,14 +6,14 @@ function Accordion() {
   const { categories, tasks, toggleTaskCompleted, handleDelete, handleEdit } =
     useTask();
 
-  const [editingTask, setEditingTask] = useState<number | null>(null);
+  const [editingTask, setEditingTask] = useState<string | null>(null);
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(selectedCategory === category ? null : category);
   };
 
   const handleSaveEdit = (
-    taskId: number,
+    taskId: string,
     updatedTask: string,
     updatedCategory: string
   ) => {
