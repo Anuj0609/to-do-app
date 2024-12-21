@@ -2,11 +2,10 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="flex items-center justify-center flex-col mt-10 gap-4">
-      <img src="./logo.png" alt="App Logo" />
-      <div className="w-2/3 mx- auto text-center text-xl font-medium text-gray-700">
-        Easily manage and organize your tasks with our simple and intuitive
-        To-Do list app.
+    <div className="flex items-center justify-center flex-col md:pt-20 pt-10  gap-4 px-4 sm:px-0">
+      <img src="./logo.png" alt="App Logo" className="w-32 sm:w-auto" />
+      <div className="text-center text-2xl font-semibold text-gray-700">
+        "Stay on top of tasks, effortlessly."
       </div>
     </div>
   );

@@ -22,23 +22,29 @@ function Accordion() {
   };
 
   return (
-    <div className="container mx-auto p-4 w-2/3">
+    <div className="container mx-auto p-4  w-full md:w-2/3">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-medium text-gray-800">
+        <h2 className="text-3xl font-semibold text-gray-800">
           Category-Wise Tasks
         </h2>
       </div>
 
-      <div className="space-y-1 justify-center">
+      <div className="space-y-1 justify-center ">
         {categories.map((category) => (
-          <div key={category} className="border-b border-gray-300">
+          <div
+            key={category}
+            className="border-b border-gray-300 shadow-md rounded-2xl overflow-hidden"
+          >
             <button
-              onClick={() => handleCategoryClick(category)}
-              className="flex justify-between items-center w-full py-2 px-6 text-lg font-light text-gray-900 bg-gray-100 rounded-2xl hover:bg-[#786f52] transition-all duration-600 ease-in-out"
+              onClick={() => {
+                if (tasks.length > 0) handleCategoryClick(category);
+              }}
+              className="flex justify-between items-center w-full py-2 px-6 text-lg font-light text-gray-900 bg-gray-100  hover:bg-[#786f52] transition-all duration-600 ease-in-out hover:text-white"
             >
-              <span>{category}</span>
+              
+              <span className="md:text-sm">{category}</span>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-text-gray-900">
                   {tasks.filter((task) => task.category === category).length}
                 </span>
                 <span className="text-lg font-bold">
@@ -48,21 +54,21 @@ function Accordion() {
             </button>
 
             {selectedCategory === category && (
-              <div className="px-4 py-2 space-y-3">
+              <div className="space-y-3">
                 <ul>
                   {tasks
                     .filter((task) => task.category === category)
                     .map((task) => (
                       <li
                         key={task.id}
-                        className="flex justify-between items-center py-2 px-2 bg-white rounded-2xl shadow-md mb-1 hover:shadow-lg transition-all duration-400 ease-in-out"
+                        className="flex justify-between items-center py-2 px-2 bg-white hover:shadow-lg transition-all duration-400 ease-in-out"
                       >
                         <div className="flex items-center space-x-3">
                           <input
                             type="checkbox"
                             checked={task.completed}
                             onChange={() => toggleTaskCompleted(task.id)}
-                            className="w-5 h-5 rounded-full border-gray-300 checked:bg-blue-500 transition-all duration-200"
+                            className="w-4 h-4 rounded-full border-gray-300 checked:bg-blue-500 transition-all duration-200"
                           />
                           {editingTask === task.id ? (
                             <input
@@ -83,7 +89,7 @@ function Accordion() {
                                 task.completed
                                   ? "line-through text-gray-400"
                                   : "text-gray-700"
-                              } text-lg font-medium`}
+                              } text-sm font-medium`}
                             >
                               {task.task}
                             </span>
@@ -97,7 +103,7 @@ function Accordion() {
                           {editingTask !== task.id && (
                             <button
                               onClick={() => setEditingTask(task.id)}
-                              className="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-400 transition-all duration-300"
+                              className="px-3 py-1 bg-yellow-500 text-sm text-white rounded-md hover:bg-yellow-400 transition-all duration-300"
                             >
                               Edit
                             </button>
@@ -118,7 +124,7 @@ function Accordion() {
                           )}
                           <button
                             onClick={() => handleDelete(task.id)}
-                            className="px-3 py-1 bg-[#4e0110] text-white rounded-md hover:bg-red-400 transition-all duration-300"
+                            className="px-3 py-1 bg-[#4e0110] text-white rounded-md hover:bg-red-400 transition-all duration-300 text-sm"
                           >
                             Delete
                           </button>

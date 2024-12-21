@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useTask } from "@/context/TaskContext";
-// import categoryIcons from "@/utils/categoryIcons";
+import categoryIcons from "@/utils/categoryIcons";
 
 function TaskInput() {
   const [inputTask, setInputTask] = useState<string>("");
   const [category, setCategory] = useState<string>("");
-  const { addTask, categories } = useTask();
+  const { addTask, categories, clearAllTasks } = useTask();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,50 +16,56 @@ function TaskInput() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-row p-4 gap-2 justify-evenly"
-    >
-      <div>
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="p-1 border border-gray-300 rounded-2xl text-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#463f3a]"
-        >
-          <option value="" className="bg-[#8a817c] hover:text-2xl font-light">
-            Select Category
-          </option>
-          {categories.map((cat, index) => (
-            <option
-              key={index}
-              value={cat}
-              className="px-2 py-1 text-lg text-gray-700 bg-[#8a817c] focus:bg-red-500 hover:text-4xl"
-            >
-              {cat}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="flex flex-row">
+    <div className="flex flex-row items-center justify-center w-full">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-row p-4 gap-2 justify-evenly items-center"
+      >
+        <input
+          value={inputTask}
+          type="text"
+          onChange={(e) => setInputTask(e.target.value)}
+          placeholder="Enter your task"
+          className="px-2 py-1 border border-gray-300 rounded-md bg-white"
+        />
+
         <div>
-          <input
-            value={inputTask}
-            type="text"
-            onChange={(e) => setInputTask(e.target.value)}
-            placeholder="Enter your task"
-            className="p-1 border border-gray-300 rounded-l-3xl text-lg bg-white"
-          />
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="px-2 py-1 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-[#463f3a]"
+          >
+            <option value="" className=" hover:text-2xl font-light">
+              Select Category
+            </option>
+            {categories.map((cat, index) => (
+              <option
+                key={index}
+                value={cat}
+                className="px-2 py-1 text-lg text-gray-700 focus:bg-red-500 hover:text-4xl"
+              >
+                {cat}
+              </option>
+            ))}
+          </select>
         </div>
+
         <div>
           <button
             type="submit"
-            className="p-1 border border-gray-300 rounded-r-3xl text-lg bg-[#CAE5FF]"
+            className="px-3 py-1 bg-[#4e0110] text-white rounded-md hover:bg-red-400 transition-all duration-300"
           >
             Add Task
           </button>
         </div>
-      </div>
-    </form>
+        <div className="px-3 py-1 bg-[#130407] text-white rounded-md hover:bg-red-400 transition-all duration-300 ">
+          <button onClick={clearAllTasks} className="flex flex-row items-center">
+            <img className="w-4" src="/clear.png" alt="Clear Icon" />
+            <span className="px-4">Reset</span>
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 

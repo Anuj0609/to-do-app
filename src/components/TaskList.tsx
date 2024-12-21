@@ -12,7 +12,6 @@ function TaskList() {
     handleDelete,
     handleEdit,
     categories,
-    clearAllTasks,
   } = useTask();
 
   const editTask = (
@@ -42,7 +41,7 @@ function TaskList() {
         {tasks.map((task) => (
           <li
             key={task.id}
-            className="mb-3 p-2 rounded-xl shadow-md hover:shadow-xl "
+            className="mb-3 p-2 rounded-xl hover:shadow-md bg-[#f5da9d] transition-all duration-300"
           >
             <div className="flex flex-col space-y-3">
               {isEditing === task.id ? (
@@ -82,7 +81,7 @@ function TaskList() {
                   </div>
                 </div>
               ) : (
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center overflow-hidden">
                   <div className="flex items-center space-x-4">
                     <input
                       type="checkbox"
@@ -90,9 +89,9 @@ function TaskList() {
                       onChange={() => toggleTaskCompleted(task.id)}
                       className="w-6 h-5 rounded-full border-gray-300 checked:bg-blue-500 transition-all duration-200"
                     />
-                    <div className="flex flex-col space-y-1">
+                    <div className="flex flex-col space-y-1 ">
                       <span
-                        className={`text-sm font-medium ${
+                        className={`text-sm font-medium text-wrap ${
                           task.completed
                             ? "line-through text-gray-400"
                             : "text-black"
@@ -132,15 +131,7 @@ function TaskList() {
             </div>
           </li>
         ))}
-        <div className="flex justify-end ">
-          <button
-            onClick={clearAllTasks}
-            className="flex flex-row gap-2 items-center"
-          >
-            <img className="w-4" src="/clear.png" alt="Clear Icon" />
-            <span>Clear All</span>
-          </button>
-        </div>
+        
       </ul>
     </div>
   );
