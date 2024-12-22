@@ -14,7 +14,7 @@ function TaskList() {
     categories,
   } = useTask();
 
-    const recentTasks = tasks.slice(0, 5);
+    const recentTasks = tasks.slice(0, 6);
 
   const editTask = (
     taskId: string,
