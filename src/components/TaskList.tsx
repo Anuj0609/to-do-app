@@ -37,9 +37,10 @@ function TaskList() {
     <div className="flex flex-col justify-center w-full md:w-2/3 mx-auto px-6 ">
       <button
         onClick={() => setShowRecentTasks(!showRecentTasks)}
-        className="text-lg py-3 px-6 bg-gray-100 rounded-2xl font-light text-gray-900  hover:bg-[#a6934e] hover:text-white transition-all duration-300 w-full"
+        className="text-lg px-6 py-3 bg-gray-100 rounded-2xl font-light text-gray-900  hover:bg-[#a6934e] hover:text-white transition-all duration-300 w-full flex items-center justify-between"
       >
         Recently Added
+        <span className="text-sm text-text-gray-900">Total {""}{tasks.length}</span>
       </button>
 
       {showRecentTasks && (
