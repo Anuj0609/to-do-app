@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useTask } from "@/context/TaskContext";
-// import categoryIcons from "@/utils/categoryIcons";
 
 function TaskInput() {
   const [inputTask, setInputTask] = useState<string>("");
@@ -16,56 +15,49 @@ function TaskInput() {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-full">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-row p-4 gap-2 justify-evenly items-center"
-      >
-        <input
-          value={inputTask}
-          type="text"
-          onChange={(e) => setInputTask(e.target.value)}
-          placeholder="Enter your task"
-          className="px-2 py-1 border border-gray-300 rounded-md bg-white"
-        />
+    <form
+      onSubmit={handleSubmit}
+      className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-1 mx-auto md:gap-2 gap-1  w-3/4 lg:w-1/2 py-5 justify-center items-center"
+    >
+      <input
+        value={inputTask}
+        type="text"
+        onChange={(e) => setInputTask(e.target.value)}
+        placeholder="Enter your task"
+        className="lg:col-span-4 md:col-span-4 border border-gray-300  px-2 rounded-xl md:h-12 h-10"
+      />
 
-        <div>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="px-2 py-1 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-[#463f3a]"
-          >
-            <option value="" className=" hover:text-2xl font-light">
-              Select Category
+      <div className="text-center lg:col-span-4 md:col-span-4">
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border border-gray-300 md:h-12 h-10 rounded-xl w-full px-2"
+        >
+          <option value="">Select Category</option>
+          {categories.map((cat, index) => (
+            <option key={index} value={cat}>
+              {cat}
             </option>
-            {categories.map((cat, index) => (
-              <option
-                key={index}
-                value={cat}
-                className="px-2 py-1 text-lg text-gray-700 focus:bg-red-500 hover:text-4xl"
-              >
-                {cat}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <button
-            type="submit"
-            className="px-3 py-1 bg-[#4e0110] text-white rounded-md hover:bg-red-400 transition-all duration-300"
-          >
-            Add Task
-          </button>
-        </div>
-        <div className="px-3 py-1 bg-[#130407] text-white rounded-md hover:bg-red-400 transition-all duration-300 ">
-          <button onClick={clearAllTasks} className="flex flex-row items-center">
-            <img className="w-4" src="/clear.png" alt="Clear Icon" />
-            <span className="px-4">Reset</span>
-          </button>
-        </div>
-      </form>
-    </div>
+          ))}
+        </select>
+      </div>
+      <button
+        type="submit"
+        className="text-center lg:col-span-2 md:col-span-4 bg-[#586BA4] text-white px-3 py-1 md:h-12 h-10 rounded-xl md:w-full w-1/2 mx-auto"
+      >
+        +Task
+      </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          clearAllTasks();
+        }}
+        className="text-center lg:col-span-2 md:col-span-4 bg-[#4e0110] text-white rounded-xl md:h-12 h-10 px-3 py-1 md:w-full w-1/2 mx-auto"
+      >
+        <img src="/clear.png" alt="Clear Icon" className="inline w-6 mr-2" />
+        Reset
+      </button>
+    </form>
   );
 }
 
