@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTask } from "@/context/TaskContext";
+import { RiFunctionAddFill } from "react-icons/ri";
 
 function TaskInput() {
   const [inputTask, setInputTask] = useState<string>("");
@@ -46,7 +47,8 @@ function TaskInput() {
         type="submit"
         className="lg:col-span-2 md:col-span-4 bg-[#352208] text-white px-3 py-1 md:h-12 h-10 rounded-xl w-full"
       >
-        +Task
+        <RiFunctionAddFill className="inline w-6 " />
+        Add
       </button>
 
       <button

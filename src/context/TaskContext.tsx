@@ -32,6 +32,7 @@ interface TaskContextType {
 const defaultContextValue: TaskContextType = {
   tasks: [],
   categories: [
+    "Recet Task",
     "Work",
     "Personal",
     "Home",
