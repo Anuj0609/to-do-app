@@ -44,7 +44,7 @@ function TaskInput() {
 
       <button
         type="submit"
-        className="lg:col-span-2 md:col-span-4 bg-[#586BA4] text-white px-3 py-1 md:h-12 h-10 rounded-xl w-full"
+        className="lg:col-span-2 md:col-span-4 bg-[#352208] text-white px-3 py-1 md:h-12 h-10 rounded-xl w-full"
       >
         +Task
       </button>
@@ -54,7 +54,7 @@ function TaskInput() {
           e.preventDefault();
           clearAllTasks();
         }}
-        className="lg:col-span-2 md:col-span-4 bg-[#4e0110] text-white rounded-xl md:h-12 h-10 px-3 py-1 w-full"
+        className="lg:col-span-2 md:col-span-4 bg-[#352208] text-white rounded-xl md:h-12 h-10 px-3 py-1 w-full"
       >
         <img src="/clear.png" alt="Clear Icon" className="inline w-6 mr-2" />
         Reset

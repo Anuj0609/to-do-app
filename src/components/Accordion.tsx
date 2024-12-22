@@ -41,7 +41,6 @@ function Accordion() {
               }}
               className="flex justify-between items-center w-full py-2 px-6 text-lg font-light text-gray-900 bg-gray-100  hover:bg-[#786f52] transition-all duration-600 ease-in-out hover:text-white"
             >
-              
               <span className="md:text-sm">{category}</span>
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-text-gray-900">
@@ -117,14 +116,14 @@ function Accordion() {
                                   task.category
                                 )
                               }
-                              className="px-3 py-1 bg-[#586BA4] text-white rounded-md hover:bg-green-400 transition-all duration-300"
+                              className="px-3 py-1 bg-[#685634] text-white rounded-md hover:bg-green-400 transition-all duration-300"
                             >
                               Save
                             </button>
                           )}
                           <button
                             onClick={() => handleDelete(task.id)}
-                            className="px-3 py-1 bg-[#4e0110] text-white rounded-md hover:bg-red-400 transition-all duration-300 text-sm"
+                            className="px-3 py-1 bg-[#7B6B43] text-white rounded-md hover:bg-red-400 transition-all duration-300 text-sm"
                           >
                             Delete
                           </button>

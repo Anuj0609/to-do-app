@@ -115,7 +115,7 @@ function TaskList() {
                     </span>
                     <button
                       onClick={() => handleDelete(task.id)}
-                      className="px-2 py-1 bg-red-600 text-white rounded-xl hover:bg-red-500 transition-all duration-300"
+                      className="px-2 py-1 bg-[#7B6B43] text-white rounded-lg hover:bg-red-500 transition-all duration-300"
                     >
                       Delete
                     </button>
@@ -123,7 +123,7 @@ function TaskList() {
                       onClick={() =>
                         editTask(task.id, task.task, task.category)
                       }
-                      className="px-2 py-1 bg-yellow-600 text-white rounded-xl hover:bg-yellow-500 transition-all duration-300"
+                      className="px-2 py-1 bg-yellow-600 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300"
                     >
                       Edit
                     </button>
