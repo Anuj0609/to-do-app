@@ -23,11 +23,11 @@ function Accordion() {
 
   return (
     <div className="container mx-auto p-4  w-full md:w-2/3">
-      <div className="text-center mb-6">
+      {/* <div className="text-center mb-6">
         <h2 className="text-3xl font-semibold text-gray-800">
           Category-Wise Tasks
         </h2>
-      </div>
+      </div> */}
 
       <div className="space-y-1 justify-center ">
         {categories.map((category) => (
@@ -51,7 +51,7 @@ function Accordion() {
                 </span>
               </div>
             </button>
-
+               
             {selectedCategory === category && (
               <div className="space-y-3">
                 <ul>
