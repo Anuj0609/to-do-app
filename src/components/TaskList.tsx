@@ -14,6 +14,8 @@ function TaskList() {
     categories,
   } = useTask();
 
+    const recentTasks = tasks.slice(0, 5);
+
   const editTask = (
     taskId: string,
     currentTask: string,
@@ -36,9 +38,9 @@ function TaskList() {
   };
 
   return (
-    <div className="flex justify-center w-full px-6">
+    <div className="flex justify-center w-full md:w-1/2 mx-auto px-6">
       <ul className="w-full">
-        {tasks.map((task) => (
+        {recentTasks.map((task) => (
           <li
             key={task.id}
             className="mb-3 p-2 rounded-xl hover:shadow-md bg-[#f5da9d] transition-all duration-300"
@@ -131,7 +133,6 @@ function TaskList() {
             </div>
           </li>
         ))}
-        
       </ul>
     </div>
   );

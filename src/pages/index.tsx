@@ -9,8 +9,8 @@ export default function Home() {
     <TaskProvider>
       <Header />
       <TaskInput />
-      <Accordion />
       <TaskList />
+      <Accordion />
     </TaskProvider>
   );
 }
