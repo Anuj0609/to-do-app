@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useTask } from "@/context/TaskContext";
 import { RiFunctionAddFill } from "react-icons/ri";
+import { VscClearAll } from "react-icons/vsc";
+
 
 function TaskInput() {
   const [inputTask, setInputTask] = useState<string>("");
@@ -58,7 +60,7 @@ function TaskInput() {
         }}
         className="lg:col-span-2 md:col-span-4 bg-[#352208] text-white rounded-xl md:h-12 h-10 px-3 py-1 w-full"
       >
-        <img src="/clear.png" alt="Clear Icon" className="inline w-6 mr-2" />
+        <VscClearAll className="inline w-6 " />
         Reset
       </button>
     </form>
