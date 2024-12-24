@@ -117,14 +117,13 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
     );
   };
 
- const handleDelete = (id: string) => {
-   setTasks((prevTasks) => {
-     const updatedTasks = prevTasks.filter((task) => task.id !== id);
-     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-     return updatedTasks;
-   });
- };
-
+  const handleDelete = (id: string) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== id);
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
+  };
 
   const handleEdit = (
     id: string,
@@ -140,7 +139,10 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
     );
   };
 
-  const clearAllTasks = () => setTasks([]);
+  const clearAllTasks = () => {
+    setTasks([]);
+    localStorage.removeItem("tasks");
+  };
 
   return (
     <TaskContext.Provider
